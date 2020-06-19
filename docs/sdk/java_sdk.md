@@ -1355,10 +1355,10 @@ class Asset {
 - Failed to initialize the SSLContext: Input stream not contain valid certificates. <br> 
   加载证书文件失败，CentOS系统使用OpenJDK的错误，参考[CentOS环境安装JDK](../manual/console.html#java)章节重新安装OracleJDK。<br><br> 
 
-- Failed to connect to nodes: [connection timed out: /192.0.0.1:20200]<br>  
+- Failed to connect to nodes: [connection timed out: /127.0.0.1:20200]<br>  
   连接超时，节点的网络不可达，请检查提示的IP是否配置错误，或者，当前JavaSDK运行环境与节点的环境网络确实不通，可以咨询运维人员解决网络不通的问题。<br><br> 
 
-- Failed to connect to nodes: [拒绝连接: /127.0.0.1:20200]<br>  
+- Failed to connect to nodes: [Connection refused: /127.0.0.1:20200]<br>  
   拒绝连接，无法连接对端的端口，可以使用telnet命令检查端口是否连通，可能原因：
   1. 节点未启动，端口处于未监听状态，启动节点即可。
   2. 节点监听`127.0.0.1`的网段，监听`127.0.0.1`网络只能本机的客户端才可以连接，控制台位于不同服务器时无法连接节点，将节点配置文件`config.ini`中的`channel_listen_ip`修改为控制台连接节点使用的网段IP，或者将其修改为`0.0.0.0`。
